@@ -1,4 +1,5 @@
 import React from "react";
+import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 import {Navbar, Nav, Stack, Container} from "react-bootstrap";
 
 export function PasarelaDePago() {
@@ -17,11 +18,11 @@ export function PasarelaDePago() {
               <Nav className="me-auto">
                 <Nav.Link className="btn btn-warning px-4 rounded-pill ms-2 text-white" href="#">Regresar</Nav.Link>
               </Nav>
-              <Nav className="">
-                <Nav.Link href="#">F</Nav.Link>
-                <Nav.Link href="#">I</Nav.Link>
-                <Nav.Link href="#">W</Nav.Link>
-                <Nav.Link href="#">Y</Nav.Link>
+              <Nav>
+                <Nav.Link href="#"><FaFacebook className="text-white" /></Nav.Link>
+                <Nav.Link href="#"><FaInstagram className="text-white" /></Nav.Link>
+                <Nav.Link href="#"><FaTwitter className="text-white" /></Nav.Link>
+                <Nav.Link href="#"><FaYoutube className="text-white" /></Nav.Link>
               </Nav>
             </Container>
         </Navbar>
