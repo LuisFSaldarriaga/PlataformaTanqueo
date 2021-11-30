@@ -1,18 +1,31 @@
 import React from "react";
-import { Button, ButtonGroup, Nav, Stack, Container} from "react-bootstrap";
+import {Navbar, Nav, Stack, Container} from "react-bootstrap";
 
 export function PasarelaDePago() {
     return (
         <>
-        <header className="mb-3">
-            <nav>
-                <Nav className="p-2 bg-secondary" activeKey="/home" onSelect={(selectedKey) => alert(`selected ${selectedKey}`)} >
-                    <Nav.Item>
-                      <Nav.Link className="btn btn-warning rounded text-white px-5 ms-5" href="/home">Regresar</Nav.Link>
-                    </Nav.Item>
-                </Nav>
-            </nav>
-        </header>
+        <Navbar bg="secondary" className="py-1 mb-2">
+            <Container>
+              <Navbar.Brand href="#home">
+                <img
+                  src="/logo.svg"
+                  width="150"
+                  className="d-inline-block align-top"
+                  alt="Logo"
+                />
+              </Navbar.Brand>
+              <Nav className="me-auto">
+                <Nav.Link className="btn btn-warning px-4 rounded-pill ms-2 text-white" href="#">Regresar</Nav.Link>
+              </Nav>
+              <Nav className="">
+                <Nav.Link href="#">F</Nav.Link>
+                <Nav.Link href="#">I</Nav.Link>
+                <Nav.Link href="#">W</Nav.Link>
+                <Nav.Link href="#">Y</Nav.Link>
+              </Nav>
+            </Container>
+        </Navbar>
+
         <h2 className="text-center mb-5">Selecciona Medio de Pago</h2>
         <Stack gap={3} className="col-md-5 mx-auto">
             <Container className="bg-secondary text-white py-4 px-3 rounded">
