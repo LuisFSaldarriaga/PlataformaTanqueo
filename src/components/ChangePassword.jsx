@@ -22,28 +22,29 @@ const confirmPasswordValidation = (check, input) => {
 const ChangePassword = () => {
     
     //Manejo de estado del error y lo que se encuentre en la caja de texto
-    const [value, setValue] = useState('');
-    const [value2, setValue2] = useState('');
+    const [password, setPassword] = useState('');
+    const [c_password, setC_password] = useState('');
     const [error, setError] = useState('');
 
     //Función para verificar que la contraseña cumpla con la Regex 
-    const changeHandler = (event) => {
-        setValue(event.target.value);
-
-        const error = validation(event.target.value);
+    const inputPassword = (event) => {
+        setPassword(event.target.value);
+        const error = validation(password);
         setError(error);
     };
-    //Función para no enviar el formulario si hay algún error
-    const submitHandler = (event) => {
-        event.preventDefault();
-    };
+
     //Función para comparar ambas cajas de texto y verificar que sean iguales
     const checkPassword = (event) => {
-        setValue2(event.target.value);
-        const error = confirmPasswordValidation(value, event.target.value2);
+        setC_password(event.target.value);
+        const error = confirmPasswordValidation(password, c_password);
         setError(error);
     };
 
+    //Función para no enviar el formulario si hay algún error
+    const submitHandler = (event) => {
+        if (Boolean(error)) return event.preventDefault();
+    };
+    
     return (
             <>
             <div className="text-white">
@@ -51,10 +52,10 @@ const ChangePassword = () => {
                     <Form onSubmit={submitHandler}>
                         <label style={{display:'flex', justifyContent:'center', fontSize:'35px'}} >Cambiar Contraseña</label>
                         <br />
-                        <input className="form-control" type="text" placeholder="Nueva Constraseña" value={value} onChange={changeHandler} />
+                        <input className="form-control" type="text" placeholder="Nueva Constraseña" value={password} onChange={inputPassword} />
                         {Boolean(error) && <p>{error}</p>}
                         <br />
-                        <input className="form-control" type="text" placeholder="Confirmar Constraseña" value={value2} onChange={checkPassword} />
+                        <input className="form-control" type="text" placeholder="Confirmar Constraseña" value={c_password} onChange={checkPassword} />
                         <br />
                         <Button variant="warning" >Cancelar</Button>
                         <Button variant="warning" className="m-2" >Continuar</Button>

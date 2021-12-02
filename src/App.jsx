@@ -13,6 +13,7 @@ export function App() {
 
     return (
         <body className="bg-dark vh-100 text-white">
+            <UsuarioInternoReg />
             <PasarelaDePago />
         </body>
     ); 
