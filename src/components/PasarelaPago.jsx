@@ -1,32 +1,9 @@
 import React from "react";
-import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 import {Navbar, Nav, Stack, Container} from "react-bootstrap";
 
 export function PasarelaDePago() {
     return (
         <>
-        <Navbar bg="secondary" className="py-1 mb-2">
-            <Container>
-              <Navbar.Brand href="#home">
-                <img
-                  src="/logo.svg"
-                  width="150"
-                  className="d-inline-block align-top"
-                  alt="Logo"
-                />
-              </Navbar.Brand>
-              <Nav className="me-auto">
-                <Nav.Link className="btn btn-warning px-4 rounded-pill ms-2 text-white" href="#">Regresar</Nav.Link>
-              </Nav>
-              <Nav>
-                <Nav.Link href="#"><FaFacebook className="text-white" /></Nav.Link>
-                <Nav.Link href="#"><FaInstagram className="text-white" /></Nav.Link>
-                <Nav.Link href="#"><FaTwitter className="text-white" /></Nav.Link>
-                <Nav.Link href="#"><FaYoutube className="text-white" /></Nav.Link>
-              </Nav>
-            </Container>
-        </Navbar>
-
         <h2 className="text-center mb-5">Selecciona Medio de Pago</h2>
         <Stack gap={3} className="col-md-5 mx-auto">
             <Container className="bg-secondary text-white py-4 px-3 rounded">

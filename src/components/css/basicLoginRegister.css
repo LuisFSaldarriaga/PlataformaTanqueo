@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap');
+
+.form-control::placeholder { 
+
+    color:  whitesmoke !important;
+    opacity: 1; 
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: bold;
+    align-items: center;
+
+}
+
+.special-label{
+
+    color:  whitesmoke !important;
+    opacity: 1 !important; 
+    font-family: Nunito Sans !important;
+    font-style: normal !important;
+    font-weight: bold !important;
+    align-items: center !important;
+    line-height: 200% !important;
+
+}
+
+.btn{
+
+    background-color: #B15500 !important;
+    color: white !important;
+    
+}
+
+.btn:hover{
+
+    background-color: #1E1E1E !important;
+    border-color: #B15500 !important;
+    
+}
