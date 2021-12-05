@@ -1,0 +1,27 @@
+:root{
+    --NaranjaMain:#b15500;
+    --NaranjaSecond:#914702;
+    --Gris-bg:#1e1e1e;
+    --GrisMain: #5b5b5b;
+    --GrisSecond: #c4c4c4;
+}
+#Contain-Estado-Usuarios{
+    display: inline-flex;
+    height: 45px;
+    width: 200px;
+    margin: 40px 100px 0px;
+    background-color: var(--NaranjaSecond);
+    border-radius: 10px;
+}
+#Estado-Input{
+    width: 100px;
+    height: 35px;
+    margin: 5px 7px;
+    background-color: var(--GrisMain);
+    border-color: var(--GrisMain);
+    color: #fff;
+}
+#Estado-Input:focus{
+    box-shadow: none;
+    border-color: transparent;
+}

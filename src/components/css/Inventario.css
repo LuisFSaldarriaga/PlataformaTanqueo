@@ -1,0 +1,39 @@
+:root{
+    --NaranjaMain:#b15500;
+    --NaranjaSecond:#914702;
+    --Gris-bg:#1e1e1e;
+    --GrisMain: #5b5b5b;
+    --GrisSecond: #c4c4c4;
+}
+#Cont-Stock{
+    width:350px;
+    height:190px;
+    margin: 20px;
+    background-color: var(--GrisMain);
+    border-radius: 10px;
+}
+#SubContain-Stock1{
+    display: inline-flex;
+    height: 40px;
+    width: 180px;
+    background-color: var(--NaranjaMain);
+    margin-top: 20px;
+    border-radius: 10px;
+}
+#SubContain-Stock2{
+    display: inline-flex;
+    height: 60px;
+    width: 300px;
+    background-color: var(--GrisSecond);
+    margin-top: 5px;
+    border-radius: 10px;
+}
+#StockInput{
+    width: 160px;
+    height: 40px;
+    margin: auto;
+}
+#StockInput:focus{
+    box-shadow: none;
+    border-color: transparent;
+}
