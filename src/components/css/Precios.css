@@ -1,0 +1,86 @@
+:root{
+    --NaranjaMain:#b15500;
+    --NaranjaSecond:#914702;
+    --Gris-bg:#1e1e1e;
+    --GrisMain: #5b5b5b;
+    --GrisSecond: #c4c4c4;
+}
+#Titulo{
+    padding: 15px;
+    font-size: 30px;
+}
+#Cont-Gasolina{
+    width:680px;
+    height:190px;
+    margin: 20px;
+    background-color: var(--GrisMain);
+    border-radius: 10px;
+}
+#SubContain1{
+    display: inline-flex;
+    height: 50px;
+    width: 220px;
+    background-color: var(--NaranjaMain);
+    margin-top: 20px;
+    border-radius: 10px;
+}
+#SubContain2{
+    display: inline-flex;
+    height: 50px;
+    width: 220px;
+    background-color: var(--GrisSecond);
+    margin-top: 10px;
+    border-radius: 10px;
+}
+#PrecioInput{
+    width: 130px;
+    height: 35px;
+    margin: auto;
+}
+#PrecioInput:focus{
+    box-shadow: none;
+    border-color: transparent;
+}
+#Text1-Style{
+    font-size: 18px;
+    color: black;
+    margin: auto;
+}
+#Text2-Style{
+    font-size: 20px;
+    color: #fff;
+    margin: auto;
+}
+#Contain-Fecha{
+    height: 110px;
+    width: 400px;
+    background-color: var(--GrisSecond);
+    margin-top: 20px;
+    border-radius: 10px;
+}
+#Boton{
+    width: 120px;
+    margin: 10px;
+    background-color: var(--NaranjaMain);
+    border-color: var(--NaranjaMain);
+}
+#Boton:focus{
+    box-shadow: none;
+    border-color: transparent;
+}
+#Boton:hover{
+    background-color: var(--NaranjaSecond);
+    border-color: var(--NaranjaSecond);
+}
+#Contain-FechaInput{
+    display: inline-flex;
+    margin: auto;
+}
+#FechaInput{
+    text-align: center;
+    margin: 20px 5px 5px;
+}
+#FechaInput:focus{
+    box-shadow: none;
+    border-color: transparent;
+}

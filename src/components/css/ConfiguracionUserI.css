@@ -1,0 +1,31 @@
+:root{
+    --NaranjaMain:#b15500;
+    --NaranjaSecond:#914702;
+    --Gris-bg:#1e1e1e;
+    --GrisMain: #5b5b5b;
+    --GrisSecond: #c4c4c4;
+}
+#Link-ConfUserI{
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+}
+#Link-ConfUserI:hover{
+    color: var(--NaranjaMain);
+}
+#Contain-LabelsConf{
+    width: 400px;
+    text-align: center;
+}
+#LabelsConf{
+    height: 40px;
+    width: 300px;
+    margin: 15px 20px;
+    background-color: var(--GrisMain);
+    border-color: var(--GrisMain);
+    color: #fff;
+}
+#LabelsConf:focus{
+    box-shadow: none;
+    border-color: transparent;
+}
