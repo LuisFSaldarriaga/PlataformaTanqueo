@@ -23,7 +23,7 @@ export function App() {
     return (
         <div className="bg-dark vh-100 text-white">
             {/*<HeaderUserI></HeaderUserI>*/}
-            <Login/>
+            <Singup/>
             <FooterUserI></FooterUserI>
         </div>
     ); 
