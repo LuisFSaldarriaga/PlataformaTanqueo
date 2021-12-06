@@ -16,6 +16,7 @@ import { ConfiguracionUserI } from "./components/ConfiguracionUserI.jsx";
 import { FooterUserI } from "./components/FooterUserI.jsx";
 import { Login } from "./components/Login.jsx";
 import { Singup } from "./components/Singup.jsx";
+import { Footer } from "./components/Footer";
 
 export function App() {
     
@@ -23,8 +24,8 @@ export function App() {
     return (
         <div className="bg-dark vh-100 text-white">
             {/*<HeaderUserI></HeaderUserI>*/}
-            <Singup/>
-            <FooterUserI></FooterUserI>
+            <Footer />
+            {/* <FooterUserI></FooterUserI> */}
         </div>
     ); 
 }
