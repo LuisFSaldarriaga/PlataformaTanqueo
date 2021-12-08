@@ -1,0 +1,43 @@
+:root{
+    --NaranjaMain: #b15500;
+    --GrisMain: #5b5b5b;
+   }
+   
+   #Header-UserE{
+       background-color: var(--GrisMain);
+       height:60px;
+   }
+   #Nav-cont{
+       height: 60px;
+   }
+   #link{
+       color: #fff;
+       padding: 10px;
+       margin-top: 8px;
+       position: relative;
+   }
+   /*las clases "link:after", y "link:hover::after" corresponden al efecto
+   hover que se ve al pasar el cursor sobre los links que estan en el header.*/
+   #link:after{
+       content: "";
+       width: 0;
+       height: 3px;
+       background-color: var(--NaranjaMain);
+       position: absolute;
+       bottom: 0;
+       right: 50%;
+       transition: all .3s;
+       will-change: width;
+   }
+   #link:hover::after{
+       width: 100%;
+       right: 0;
+   }
+   .Icons-Header{
+       width: 50px;
+       margin: auto;
+       color: #fff;
+   }
+   .Icons-Header:hover{
+       color: var(--NaranjaMain);
+   }
