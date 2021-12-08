@@ -1,12 +1,43 @@
-import React from "react";
-import { Row, Col, Container, Stack, Button } from "react-bootstrap" ;
+import React, { useState } from "react";
+import { Row, Col, Container, Stack, Button, Modal, ModalBody } from "react-bootstrap" ;
+import { Terms } from "./Terms.jsx"
 
 export function Singup() {
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     return(
         
         <div className="d-flex justify-content-center align-items-center">
             <form className="d-flex flex-column mx-md-5 my-3 justify-content-center"> 
+            
+            <Modal size="lg" show={show} onHide={handleClose} >
+                <form>
+                <Modal.Header className="modalHeader justify-content-center">
+                <Modal.Title>Terminos y Condiciones</Modal.Title>
+                </Modal.Header>
+                <Modal.Body className="modalBody textFormatDefault" style={{
+                    maxHeight: 'calc(100vh - 210px)',
+                    overflowY: 'auto'
+                    }}>
+
+                    <Terms></Terms>
+
+                    
+                </Modal.Body>
+                <Modal.Footer className="d-flex modalFooter justify-content-between">
+                <Button variant="secondary" onClick={handleClose}>
+                    Cancelar
+                </Button>
+                <Button type="submit" onClick={handleClose}>
+                    Continuar
+                </Button>
+                </Modal.Footer>
+                </form>
+            </Modal>
+
             <Row className="d-inline-flex flex-fill my-5 mx-md-5 align-items-center " fluid>
                 <Container className="d-flex justify-content-center">
                     <h2>Registrar Usuario</h2>
@@ -54,7 +85,9 @@ export function Singup() {
                     <Container className="d-flex flex-column justify-content-center ">
 
                         <Container  className="d-inline-flex justify-content-center pb-3 border-bottom border-light border-3 ">
-                            <input type="submit" id="submitButton" value="Registrar" className="btn btn-lg" placeholder="Ingresar"/>
+                                <Button className="btn" onClick={handleShow}>
+                                    Registrar
+                                </Button>  
                         </Container>       
 
                         <Container  className="d-inline-flex justify-content-center mb-3">

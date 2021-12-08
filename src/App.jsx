@@ -4,7 +4,7 @@ import { Table } from 'react-bootstrap';
 import { Row } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
-import ChangePassword from "./components/ChangePassword";
+import { ChangePassword} from "./components/ChangePassword";
 import { UsuarioInternoReg } from "./components/UsuarioInternoReg";
 import { PasarelaDePago } from "./components/PasarelaPago";
 import { HeaderUserE } from  "./components/HeaderUserE";

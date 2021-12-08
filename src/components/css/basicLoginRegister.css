@@ -1,12 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap');
 
+:root{
+    --NaranjaMain:#b15500;
+    --NaranjaSecond:#914702;
+    --Gris-bg:#1e1e1e;
+    --GrisMain: #5b5b5b;
+    --GrisSecond: #c4c4c4;
+}
+
 .form-control::placeholder { 
 
     color:  whitesmoke !important;
     opacity: 1; 
     font-family: Nunito Sans;
     font-style: normal;
-    font-weight: bold;
+    font-weight: normal;
     align-items: center;
 
 }
@@ -17,7 +25,7 @@
     opacity: 1 !important; 
     font-family: Nunito Sans !important;
     font-style: normal !important;
-    font-weight: bold !important;
+    font-weight: normal !important;
     align-items: center !important;
     line-height: 200% !important;
 
@@ -25,14 +33,43 @@
 
 .btn{
 
-    background-color: #B15500 !important;
+    background-color: var(--NaranjaMain) !important;
     color: white !important;
     
 }
 
 .btn:hover{
 
-    background-color: #1E1E1E !important;
-    border-color: #B15500 !important;
+    background-color: var(--NaranjaSecond) !important;
+    border-color: var(--NaranjaSecond) !important;
     
+}
+
+.textFormatDefault{
+    color:  whitesmoke !important;
+    opacity: 1 !important; 
+    font-family: Nunito Sans !important;
+}
+
+.modalHeader{
+    background-color: var(--NaranjaMain);
+    color:whitesmoke;
+}
+
+.modalBody{
+    background-color: var(--GrisMain);
+}
+
+.modalBody::after{
+    content: "*Al hacer click en continuar declaras haber leido y aceptado los terminos y condiciones.";
+    color: red;
+}
+
+.modalBody::before{
+    content: "*Al hacer click en continuar declaras haber leido y aceptado los terminos y condiciones.";
+    color: red;
+}
+
+.modalFooter{
+    background-color: var(--GrisMain);
 }

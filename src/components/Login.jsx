@@ -1,24 +1,47 @@
-import React from "react";
-import { Row, Col, Container, Stack, Button } from "react-bootstrap" ;
+import React, { useState } from "react";
+import { Row, Col, Container, Stack, Button, Modal } from "react-bootstrap" ;
 import recoverPassword from "./LoginModal_RecoverPassword";
 import Logo from "./assets/img/logo.png";
 import "./css/basicLoginRegister.css";
 
 export function Login() {
-    const [modalShow, setModalShow] = React.useState(false);
-    return(
+    const [show, setShow] = useState(false);
 
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+    
+    return(
         <div className="d-flex justify-content-center align-items-center"> 
-            <Row className="d-inline-flex flex-fill my-5 mx-md-5 align-items-center" fluid>
+
+            <Modal show={show} onHide={handleClose} centered>
+                <form>
+                <Modal.Header className="modalHeader justify-content-center">
+                <Modal.Title>Recuperar Contraseña</Modal.Title>
+                </Modal.Header>
+                <Modal.Body className="modalBody">
+                    <input type="email" id="recoverEmail" className="bg-secondary text-light border-0 rounded-3 form-control-lg form-control" placeholder="Correo Electronico"/>
+                </Modal.Body>
+                <Modal.Footer className="d-flex modalFooter justify-content-between">
+                <Button variant="secondary" onClick={handleClose}>
+                    Cancelar
+                </Button>
+                <Button type="submit" onClick={handleClose}>
+                    Enviar
+                </Button>
+                </Modal.Footer>
+                </form>
+            </Modal>
+
+            <Row className="d-inline-flex flex-column flex-lg-row flex-fill my-5 mx-lg-5 align-items-center" fluid>
                 <Col  className="d-flex justify-content-center"> 
-                    <Container className="d-block pb-md-5 align-middle">
-                    <h1 className="font-weight-bold display-2 pb-md-5 text-center">BIENVENIDOS</h1>
+                    <Container className="d-block pb-lg-5 align-middle">
+                    <h1 className="font-weight-bold display-2 pb-lg-5 text-center">BIENVENIDOS</h1>
                     </Container>
                 </Col>
-                <Col xs={{ order: 'last' }} className="d-flex my-5 mx-md-5 justify-content-center"> 
+                <Col xs={{ order: 'last' }} className="d-flex my-5 mx-lg-5 justify-content-center"> 
                  <Container>           
                     <div>
-                        <Container className="d-inline-flex pt-md-5 align-items-center">
+                        <Container className="d-inline-flex pt-lg-5 align-items-center">
                             <img 
                                 src={Logo} 
                                 alt="LoginLogo" 
@@ -27,7 +50,7 @@ export function Login() {
                                 max-width="100%" />
                         </Container>
 
-                        <Container className="d-flex pt-4 px-md-5 flex-column">
+                        <Container className="d-flex pt-4 px-lg-5 flex-column">
 
                             <Container>
                                 <form>
@@ -43,15 +66,9 @@ export function Login() {
                             
                             <Container className="d-flex justify-content-between">
                                 
-                                <Button className="btn border-0 bg-dark text-light" onClick={() => setModalShow(true)}>
+                                <Button className="btn border-0 bg-dark text-light" onClick={handleShow}>
                                     Recuperar Contraseña
-                                </Button>
-
-                                <recoverPassword
-                                    show={modalShow}
-                                    onHide={() => setModalShow(false)}
-                                />
-
+                                </Button>   
 
                                 <Button className="btn border-0 bg-dark text-light" >
                                     Registrarse
