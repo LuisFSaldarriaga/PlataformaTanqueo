@@ -29,7 +29,7 @@ export function App() {
         <div className="bg-dark vh-100 text-white">
             {/*<HeaderUserE></HeaderUserE>*/}
             <HeaderUserE/>
-            <Historial/>
+            <MisVehiculos/>
             <FooterUserE></FooterUserE>
         </div>
     ); 

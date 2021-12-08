@@ -1,70 +1,70 @@
 import React from "react";
 import "./css/MisVehiculos.css";
+import Carro from './assets/img/Carro.png';
 import Tanque from './assets/img/Tanque.png';
 import { Container, Row, Col, Form, FormControl, InputGroup, Button, Dropdown, DropdownButton} from 'react-bootstrap';
 
 export function MisVehiculos() {
     return (
-        <Container >
+        <><Container>
             <Row className="justify-content-md-center">
                 <Col md="auto" id="Titulo">
                     Mis Vehiculos
                 </Col>
             </Row>
-            <Row style={{marginLeft:"40px"}}>
-                <Col>
-                    <Row>
+        </Container><Container>
+                <Row>
+                    <Col xs={6} md={4}>
                         <Container id="Cont-MisVehiculos">
                             <Row>
-                                <Container style={{display:"bottom"}}>
-                                    
-                                    <div src={Tanque} alt="" width="170" style={{textAlign:"center"}}>
-                                        
-                                        <div id="placa">
-                                            <div id="Text-Placa">ABC-000</div>
-                                        </div>
-                                    </div>
-                                    
+                                <Container style={{ display: "bottom" }}>
+                                <img id="center" src={Carro} alt="" width="170" rounded />
+                                <div id="placa">
+                                    <div id="Text-Placa">ABC-000</div>
+                                </div>
                                 </Container>
                             </Row>
                         </Container>
-                        <Container id="Cont-MisVehiculos1">
+                    </Col>
+                    <Col xs={6} md={4}>
+                        <Container id="Cont-MisVehiculos">
                             <Row>
-                                <Container style={{display:"top"}}>
-                                    
-                                    <div style={{textAlign:"center"}}>
-                                        <div id="Text2-Style" style={{center:"100px"}}></div>
-                                        <div id="placa">
-                                            <div id="Text-Placa">ABC-000</div>
-                                        </div>
-                                    </div>
-                                    
+                                <Container style={{ display: "bottom" }}>
+                                <img id="center" src={Carro} alt="" width="170" rounded />
+                                <div id="placa">
+                                    <div id="Text-Placa">ABC-000</div>
+                                </div>
                                 </Container>
                             </Row>
                         </Container>
-                        <Button
-                            title="Button"
-                            id="Boton" size= "lg" >
-                                <img src={Tanque} alt="" width="170" style={{paddingLeft:"10px"}}/>
-                        </Button>
-                        
-                    </Row>
-                <Row>
-                <Col>
+                    </Col>
+                    <Col xs={6} md={4}>
+                        <Container id="Cont-MisVehiculos">
+                            <Row>
+                                <Container style={{ display: "bottom" }}>
+                                <img id="center" src={Carro} alt="" width="170" rounded />
+                                <div id="placa">
+                                    <div id="Text-Placa">ABC-000</div>
+                                </div>
+                                </Container>
+                            </Row>
+                        </Container>
+                    </Col>
                     
-                </Col>
                 </Row>
-                            
-                </Col>
-                <Col md="auto" style={{marginBottom:"40px"}} >
-                   
-                </Col>
-            </Row>
-            <Button
-                title="Button"
-                id="ButtonE1">
-                <Button>Editar/Eliminar Vehiculo</Button>{' '}
-            </Button>
-        </Container>    
+                
+            </Container>
+            <Container className="d-grid gap-4" id="BotonUE">>
+            <div id= "BotonUE"className="d-grid gap-4">
+                <Button  size="lg">
+                    <img id="center" src={Tanque} alt="" width="170" rounded />   
+                </Button>
+                <Button variant="secondary" size="lg">
+                    Editar/Eliminar Vehiculo
+                </Button>
+            </div>
+            </Container>
+            </>
+           
     );  
 }
