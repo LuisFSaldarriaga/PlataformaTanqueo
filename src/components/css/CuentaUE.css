@@ -1,0 +1,36 @@
+:root{
+    --NaranjaMain:#b15500;
+    --NaranjaSecond:#914702;
+    --Gris-bg:#1e1e1e;
+    --GrisMain: #5b5b5b;
+    --WhiteMain:#ffffff;
+    --GrisSecond: #c4c4c4;
+    --SinColorMain: (255, 255, 255, 0);
+}
+#Link-ConfUserE{
+    position: center;
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+}
+#Link-ConfUserE:hover{
+    color: var(--NaranjaMain);
+}
+#Link-ConfUserE1{
+    position: center;
+    text-decoration: none;
+    color: #fff;
+    font-size: 50px;
+}
+#Link-ConfUserE1:hover{
+    color: var(--NaranjaMain);
+}
+#Link-ConfUserE2{
+    position: center;
+    text-decoration: none;
+    color: #fff;
+    font-size: 30px;
+}
+#Link-ConfUserE2:hover{
+    color: var(--NaranjaMain);
+}

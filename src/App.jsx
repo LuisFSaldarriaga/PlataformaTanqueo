@@ -16,6 +16,7 @@ import { Historial } from "./components/Historial.jsx";
 import { Tanqueo } from "./components/Tanqueo.jsx";
 import { GestionUsuarios } from "./components/GestionUsuarios.jsx";
 import { ConfiguracionUserI } from "./components/ConfiguracionUserI.jsx";
+import { CuentaUE } from "./components/CuentaUE.jsx";
 import { FooterUserI } from "./components/FooterUserI.jsx";
 import { FooterUserE } from "./components/FooterUserE.jsx";
 import { Login } from "./components/Login.jsx";
@@ -29,7 +30,7 @@ export function App() {
         <div className="bg-dark vh-100 text-white">
             {/*<HeaderUserE></HeaderUserE>*/}
             <HeaderUserE/>
-            <MisVehiculos/>
+            <CuentaUE/>
             <FooterUserE></FooterUserE>
         </div>
     ); 
