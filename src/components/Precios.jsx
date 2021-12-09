@@ -8,7 +8,6 @@ export function Precios() {
     
     return (
         <>
-            <HeaderUserI/>
             <Container>
                 <Row className="justify-content-md-center">
                     <Col md="auto" id="Titulo">
@@ -95,7 +94,6 @@ export function Precios() {
                     </Col>
                 </Row>
             </Container>
-            <FooterUserI/>
         </>
     ); 
 }

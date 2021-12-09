@@ -8,7 +8,6 @@ import { Container, Row, Col, FormControl, Button} from 'react-bootstrap';
 export function Inventario() {
     return (
         <>
-            <HeaderUserI/>
             <Container>
                 <Row className="justify-content-md-center">
                     <Col md="auto" id="Titulo">
@@ -59,7 +58,6 @@ export function Inventario() {
                     </Col>
                 </Row>
             </Container>
-            <FooterUserI/>
         </>
     ); 
 }
