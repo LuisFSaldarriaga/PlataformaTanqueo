@@ -2,10 +2,11 @@ import React from "react";
 import "./css/FooterUserI.css";
 import Redes from './assets/img/redes.png';
 import { Nav } from 'react-bootstrap';
+import { Link } from "react-router-dom";
 
 export function FooterUserI() {
   return (
-    <footer>
+    <>
       <div class="container-footer">
         <div class="footer">
           <div class="copyright">
@@ -15,12 +16,12 @@ export function FooterUserI() {
             <img src={Redes} alt="" width="150"/>
           </Nav.Link>
           <nav class="information">
-              <a href="/"> Informacion </a>|
-              <a href="/"> Politica de Privacidad </a>|
-              <a href="/"> Terminos y Condiciones</a>
+              <Link to="/informacion"> Informacion </Link>|
+              <Link to="/informacion"> Politica de Privacidad </Link>|
+              <Link to="/informacion"> Terminos y Condiciones</Link>
           </nav>
         </div>
       </div>        
-    </footer>
+    </>
   )
 }

@@ -5,15 +5,13 @@ import { Container, Row, Col, Form, FormControl, InputGroup, Button, Dropdown, D
 
 export function Tanqueo() {
     return (
-        <Container >
-            <Row className="justify-content-md-center">
-                <Col md="auto" id="Titulo">
-                    Tanqueo
-                </Col>
-            </Row>
+        <Container className="mb-2">
+            <Container className="text-center h1 mt-2">
+                Tanqueo
+            </Container>
             <Row style={{marginLeft:"40px"}}>
-                <Col>
-                    <InputGroup className="mb-3" id="Input-Search">
+                <Col className="h-100">
+                    <InputGroup className="mb-2" id="Input-Search">
                         <FormControl
                         id="Input-SearchF"
                         placeholder="Numero de Documento"
@@ -171,7 +169,7 @@ export function Tanqueo() {
                         </Container>
                     </Row>
                 </Col>
-                <Col md="auto" style={{marginBottom:"400px"}} >
+                <Col md="auto" >
                     <PreciosView></PreciosView>
                 </Col>
             </Row>
