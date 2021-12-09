@@ -40,8 +40,8 @@
 
 .btn:hover{
 
-    background-color: var(--Gris-bg) !important;
-    border-color: var(--NaranjaMain) !important;
+    background-color: var(--NaranjaSecond) !important;
+    border-color: var(--NaranjaSecond) !important;
     
 }
 
