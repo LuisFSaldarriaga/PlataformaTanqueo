@@ -19,7 +19,7 @@ export function Singup() {
                 <Modal.Header className="modalHeader justify-content-center">
                 <Modal.Title>Terminos y Condiciones</Modal.Title>
                 </Modal.Header>
-                <Modal.Body className="modalBody textFormatDefault" style={{
+                <Modal.Body className="modalBody textFormatDefault registerModal" style={{
                     maxHeight: 'calc(100vh - 210px)',
                     overflowY: 'auto'
                     }}>
@@ -92,7 +92,7 @@ export function Singup() {
                         </Container>       
 
                         <Container  className="d-inline-flex justify-content-center mb-3">
-                                <Link to="/ingresar" className="btn border-0 bg-dark text-light" >
+                                <Link to="/ingresar" className="btn btn-link border-0 text-light" >
                                     Ingresar
                                 </Link>
                         </Container>               

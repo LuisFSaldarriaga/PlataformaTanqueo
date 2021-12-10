@@ -75,16 +75,16 @@ export function Login() {
                                     </Stack>
                                 </form>
 
-                                {/*<span className="placeholder col-12 placeholder-xs bg-light"></span>*/}
+                                
                             </Container>
                             
                             <Container className="d-flex justify-content-between">
                                 
-                                <Button className="btn border-0 bg-dark text-light" onClick={handleShow}>
+                                <Button className="btn btn-link border-0 text-light" onClick={handleShow}>
                                     Recuperar Contraseña
                                 </Button>   
 
-                                <Link to="/registrar" className="btn border-0 bg-dark text-light" >
+                                <Link to="/registrar" className="btn btn-link border-0 text-light" >
                                     Registrarse
                                 </Link>
                             </Container>

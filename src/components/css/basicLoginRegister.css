@@ -35,6 +35,15 @@
 
     background-color: var(--NaranjaMain) !important;
     color: white !important;
+    border: 0 !important;
+    
+}
+
+.btn-link{
+
+    background-color: var(--Gris-bg) !important;
+    color: white !important;
+    text-decoration: none !important;
     
 }
 
@@ -60,12 +69,12 @@
     background-color: var(--GrisMain);
 }
 
-.modalBody::after{
+.registerModal::after{
     content: "*Al hacer click en continuar declaras haber leido y aceptado los terminos y condiciones.";
     color: red;
 }
 
-.modalBody::before{
+.registerModal::before{
     content: "*Al hacer click en continuar declaras haber leido y aceptado los terminos y condiciones.";
     color: red;
 }
