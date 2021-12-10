@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { Row, Col, Container, Stack, Button, Modal, ModalBody } from "react-bootstrap" ;
 import { Terms } from "./Terms.jsx"
 
@@ -91,9 +92,9 @@ export function Singup() {
                         </Container>       
 
                         <Container  className="d-inline-flex justify-content-center mb-3">
-                                <Button className="btn border-0 bg-dark text-light" >
+                                <Link to="/ingresar" className="btn border-0 bg-dark text-light" >
                                     Ingresar
-                                </Button>
+                                </Link>
                         </Container>               
                     </Container>
                 </Row>

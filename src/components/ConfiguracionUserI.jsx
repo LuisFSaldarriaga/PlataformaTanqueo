@@ -7,7 +7,6 @@ import { Container, Row, Col, Nav, Form, Button } from 'react-bootstrap';
 export function ConfiguracionUserI() {
     return (
         <>
-            <HeaderUserI/>
             <Container>
                 <Row className="justify-content-md-center">
                     <Col md="auto" id="Titulo">
@@ -40,7 +39,6 @@ export function ConfiguracionUserI() {
                     </Col>
                 </Row>
             </Container>
-            <FooterUserI></FooterUserI>
         </>
     ); 
 }
