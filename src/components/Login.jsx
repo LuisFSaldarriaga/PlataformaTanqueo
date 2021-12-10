@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import useAuth from "../auth/useAuth";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { Row, Col, Container, Stack, Button, Modal } from "react-bootstrap" ;
 import recoverPassword from "./LoginModal_RecoverPassword";
 import Logo from "./assets/img/logo.png";
@@ -9,6 +11,16 @@ export function Login() {
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
+    const navigate = useNavigate();
+    const location = useLocation();
+    const previusObjectURL = location.state?.from;
+
+    const auth = useAuth();
+    const handleLogin = () => {
+        auth.login();
+        navigate(previusObjectURL || "/precios")
+    }
     
     return(
         <div className="d-flex justify-content-center align-items-center"> 
@@ -57,22 +69,24 @@ export function Login() {
                                     <Stack gap={4} className="pb-3 border-bottom border-light border-3">
                                         <input type="text" id="username" className="bg-secondary text-light border-0 rounded-3 form-control-lg form-control" placeholder="Usuario"/> 
                                         <input type="password" id="password" className="bg-secondary text-light border-0 rounded-3 form-control-lg form-control" placeholder="Contraseña"/>
-                                        <input type="submit" id="submitButton" value="Ingresar" className="btn form-control-lg" placeholder="Ingresar"/>
+                                        <button id="submitButton" className="btn form-control-lg" onClick={handleLogin}>
+                                            Ingresar
+                                        </button>
                                     </Stack>
                                 </form>
 
-                                {/*<span className="placeholder col-12 placeholder-xs bg-light"></span>*/}
+                                
                             </Container>
                             
                             <Container className="d-flex justify-content-between">
                                 
-                                <Button className="btn border-0 bg-dark text-light" onClick={handleShow}>
+                                <Button className="btn btn-link border-0 text-light" onClick={handleShow}>
                                     Recuperar Contraseña
                                 </Button>   
 
-                                <Button className="btn border-0 bg-dark text-light" >
+                                <Link to="/registrar" className="btn btn-link border-0 text-light" >
                                     Registrarse
-                                </Button>
+                                </Link>
                             </Container>
                         </Container>
                     </div>

@@ -3,7 +3,7 @@ import { Container, Stack } from "react-bootstrap";
 export function Footer() {
     return (
         <>
-        <Stack gap={2} className="pt-2 h-100 d-flex align-items-center justify-content-center">
+        <Stack gap={2} className="h-100 d-flex align-items-center justify-content-center">
             <Container className="text-center w-75">
                 <div>
                     <h2 className="border-bottom d-inline">Informacion</h2>

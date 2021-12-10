@@ -8,7 +8,6 @@ import { Container, Row, Col, Form, FormControl, InputGroup, Button, Dropdown, D
 export function Tanqueo() {
     return (
         <>
-            <HeaderUserI/>
             <Container >
                 <Row className="justify-content-md-center">
                     <Col md="auto" id="Titulo">
@@ -180,7 +179,6 @@ export function Tanqueo() {
                     </Col>
                 </Row>
             </Container>
-            <FooterUserI/>
         </>   
     );  
 }

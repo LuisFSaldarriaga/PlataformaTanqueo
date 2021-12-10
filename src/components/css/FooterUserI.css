@@ -12,6 +12,22 @@ footer{
     width: 100%;
     background: var(--GrisMain);
 }
+
+
+.ImageLink{
+
+    display: flex !important;
+    justify-content: center;
+    padding: 0 !important;
+
+}
+
+.ImageItem{
+
+    width: 30%;
+
+}
+
 .footer{
     max-width: 1200px;
     margin: auto;
