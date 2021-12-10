@@ -15,6 +15,13 @@ import { FooterUserI } from "../components/FooterUserI.jsx";
 import { Login } from "../components/Login.jsx";
 import { Singup } from "../components/Singup.jsx";
 import { Footer } from "../components/Footer";
+import { DatosNuevoVehiculo } from "../components/DatosNuevoVehiculo";
+import { HeaderUserE } from  "../components/HeaderUserE";
+import { PrecioPorGalon } from "../components/PrecioPorGalon.jsx";
+import { Historial } from "../components/Historial.jsx";
+import { CuentaUE } from "../components/CuentaUE.jsx";
+import { FooterUserE } from "../components/FooterUserE.jsx";
+import { MisVehiculos } from "../components/MisVehiculos.jsx";
 import PrivateRouter from "./PrivateRouter.js";
 import PublicRouter from "./PublicRouter.js";
 

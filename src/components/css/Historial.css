@@ -1,0 +1,22 @@
+:root{
+    --NaranjaMain:#b15500;
+    --NaranjaSecond:#914702;
+    --Gris-bg:#1e1e1e;
+    --GrisMain: #5b5b5b;
+    --WhiteMain:#ffffff;
+    --GrisSecond: #c4c4c4;
+    --SinColorMain: (255, 255, 255, 0);
+}
+#Cont-Historial{
+    width:1000px;
+    height:50px;
+    margin: 20px 10px 0px 10px;
+    background-color: var(--GrisMain);
+    border-radius: 10px;
+    font-size: auto;
+}
+
+#Inf {
+    padding: 15px;
+    font-size: auto;
+}
