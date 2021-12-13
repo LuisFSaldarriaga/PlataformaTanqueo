@@ -1,4 +1,5 @@
 import React from "react";
+import Card from 'react-bootstrap/Card'
 import "./css/MisVehiculos.css";
 import Carro from './assets/img/Carro.png';
 import Tanque from './assets/img/Tanque.png';
@@ -14,42 +15,25 @@ export function MisVehiculos() {
             </Row>
         </Container><Container>
                 <Row>
-                    <Col xs={6} md={4}>
-                        <Container id="Cont-MisVehiculos">
-                            <Row>
-                                <Container style={{ display: "bottom" }}>
-                                <img id="center" src={Carro} alt="" width="170" rounded />
-                                <div id="placa">
-                                    <div id="Text-Placa">ABC-000</div>
-                                </div>
-                                </Container>
-                            </Row>
-                        </Container>
-                    </Col>
-                    <Col xs={6} md={4}>
-                        <Container id="Cont-MisVehiculos">
-                            <Row>
-                                <Container style={{ display: "bottom" }}>
-                                <img id="center" src={Carro} alt="" width="170" rounded />
-                                <div id="placa">
-                                    <div id="Text-Placa">ABC-000</div>
-                                </div>
-                                </Container>
-                            </Row>
-                        </Container>
-                    </Col>
-                    <Col xs={6} md={4}>
-                        <Container id="Cont-MisVehiculos">
-                            <Row>
-                                <Container style={{ display: "bottom" }}>
-                                <img id="center" src={Carro} alt="" width="170" rounded />
-                                <div id="placa">
-                                    <div id="Text-Placa">ABC-000</div>
-                                </div>
-                                </Container>
-                            </Row>
-                        </Container>
-                    </Col>
+                    <Row xs={1} md={2} className="g-4">
+                        {Array.from({ length: 4 }).map((_, idx) => (
+                            <Col>
+                            <Card>
+                                <Card.Img id="center" src={Carro} alt="" width="170" rounded />
+                                <Card.Body>
+                                    <div id="placa">
+                                        <div id="Text-Placa">ABC-000</div>
+                                    </div>
+                                </Card.Body>
+                                
+                            </Card>
+                            <Button id= "BotonUE1" variant="secondary" size="lg">
+                                        Editar/Eliminar Vehiculo
+                            </Button>
+                            </Col>
+                            
+                        ))}
+                    </Row>
                     
                 </Row>
                 
@@ -59,9 +43,7 @@ export function MisVehiculos() {
                 <Button  size="lg">
                     <img id="center" src={Tanque} alt="" width="170" rounded />   
                 </Button>
-                <Button variant="secondary" size="lg">
-                    Editar/Eliminar Vehiculo
-                </Button>
+                
             </div>
             </Container>
             </>
