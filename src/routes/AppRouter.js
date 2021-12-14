@@ -40,6 +40,7 @@ export default function AppRouter() {
                 <Route path="/gestion-user" element={<PrivateRouter><GestionUsuarios /></PrivateRouter>} />
 
                 <Route path="/configuracion" element={<PrivateRouter><ConfiguracionUserI /></PrivateRouter>}/>
+                <Route path="/vehiculos" element={<PublicRouter> <MisVehiculos /> </PublicRouter>}/>
 
                 <Route path="*" element={<h1>Pagina No Encontrada</h1>}/>
             </Routes>

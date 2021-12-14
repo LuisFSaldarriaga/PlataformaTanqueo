@@ -4,6 +4,8 @@ import Carro from './assets/img/Carro.png';
 import Tanque from './assets/img/Tanque.png';
 import { Container, Row, Col, Form, FormControl, InputGroup, Button, Dropdown, DropdownButton} from 'react-bootstrap';
 
+
+
 export function MisVehiculos() {
     return (
         <><Container>
@@ -54,7 +56,7 @@ export function MisVehiculos() {
                 </Row>
                 
             </Container>
-            <Container className="d-grid gap-4" id="BotonUE">>
+            <Container className="d-grid gap-4" id="BotonUE">
             <div id= "BotonUE"className="d-grid gap-4">
                 <Button  size="lg">
                     <img id="center" src={Tanque} alt="" width="170" rounded />   
