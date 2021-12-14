@@ -74,17 +74,15 @@ export function Login() {
                                         </button>
                                     </Stack>
                                 </form>
-
-                                
                             </Container>
                             
                             <Container className="d-flex justify-content-between">
                                 
-                                <Button className="btn btn-link border-0 text-light" onClick={handleShow}>
+                                <Button id="link2" className="btn btn-link border-0 text-light" onClick={handleShow}>
                                     Recuperar Contraseña
                                 </Button>   
 
-                                <Link to="/registrar" className="btn btn-link border-0 text-light" >
+                                <Link id="link2" to="/registrar" className="btn btn-link border-0 text-light" >
                                     Registrarse
                                 </Link>
                             </Container>

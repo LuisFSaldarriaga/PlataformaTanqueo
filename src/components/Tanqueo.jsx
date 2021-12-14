@@ -174,7 +174,7 @@ export function Tanqueo() {
                             </Container>
                         </Row>
                     </Col>
-                    <Col md="auto" style={{marginBottom:"350px"}} >
+                    <Col md="auto" style={{marginBottom:"370px"}} >
                         <PreciosView></PreciosView>
                     </Col>
                 </Row>

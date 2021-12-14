@@ -50,7 +50,7 @@
 }
 #Boton2{
     color: #fff;
-    background-color: var(--NaranjaMain);
+    background-color: var(--NaranjaMain) !important;
     border-color: var(--NaranjaMain);
 }
 #Boton2:focus{
@@ -58,17 +58,17 @@
     border-color: transparent;
 }
 #Boton2:hover{
-    background-color: var(--NaranjaSecond);
+    background-color: var(--NaranjaSecond) !important;
     border-color: var(--NaranjaSecond);
 }
 #Boton3{
     width: 105px;
     margin-top: 15px;
-    background-color: var(--NaranjaMain);
+    background-color: var(--NaranjaMain) !important;
     border-color: var(--NaranjaMain);
 }
 #Boton3:hover{
-    background-color: var(--NaranjaSecond);
+    background-color: var(--NaranjaSecond) !important;
     border-color: var(--NaranjaSecond);
 }
 #Boton3:focus{
@@ -103,9 +103,9 @@
     width: 170px;
     text-align: left;
     margin-top: 10px;
-    background-color: #fff;
+    background-color: #fff !important;
     border-color: #fff;
-    color: black;
+    color: black !important;
 }
 #Dropdown-Tipo:focus{
     box-shadow: none;
@@ -118,15 +118,15 @@
     color: #fff;
 }
 #placa{
-    width: 120px;
-    height: 45px;
-    text-align: center;
+    width: 120px !important;
+    height: 45px !important;
+    text-align: center !important;
     background-color: yellow;
     border-radius: 10px;
 }
 #Text-Placa{
     padding-top: 5px;
-    font-size: 24px;
+    font-size: 24px !important;
     font-family: Arial, Helvetica, sans-serif;
     color: black;
 }

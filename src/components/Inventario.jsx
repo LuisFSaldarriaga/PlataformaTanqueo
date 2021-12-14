@@ -1,9 +1,7 @@
 import React from "react";
-import { HeaderUserI } from  "./HeaderUserI";
-import { FooterUserI } from "./FooterUserI.jsx";
+import { Container, Row, Col, FormControl, Button} from 'react-bootstrap';
 import { PreciosView } from "./PreciosView.jsx"
 import "./css/Inventario.css"
-import { Container, Row, Col, FormControl, Button} from 'react-bootstrap';
 
 export function Inventario() {
     return (

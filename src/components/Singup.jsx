@@ -60,7 +60,7 @@ export function Singup() {
                                         </select>
                                         <input type="tel" id="registerPhone" placeholder="Celular" className="bg-secondary text-light border-0 rounded-3 form-control-lg form-control" pattern="[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}"/>
                                         <div id="registerBirthdayGroup" className="d-flex justify-content-between bg-secondary form-control-lg rounded-3 px-2 py-0">
-                                                <h6 className="special-label form-control bg-secondary border-0 mb-0 ">Fecha de nacimiento:</h6>
+                                                <h6 id="text-label1" className="special-label form-control bg-secondary border-0 mb-0 ">Fecha de nacimiento:</h6>
                                                 <input type="date" id="registerBirthday" placeholder="Fecha de nacimiento" className="bg-secondary text-light border-0 rounded-3 form-control"/>
                                         </div>
                                     </Stack>
@@ -86,13 +86,13 @@ export function Singup() {
                     <Container className="d-flex flex-column justify-content-center ">
 
                         <Container  className="d-inline-flex justify-content-center pb-3 border-bottom border-light border-3 ">
-                                <Button className="btn" onClick={handleShow}>
+                                <Button id="submitButton" className="btn" onClick={handleShow}>
                                     Registrar
                                 </Button>  
                         </Container>       
 
                         <Container  className="d-inline-flex justify-content-center mb-3">
-                                <Link to="/ingresar" className="btn btn-link border-0 text-light" >
+                                <Link id="link2" to="/ingresar" className="btn btn-link border-0 text-light" >
                                     Ingresar
                                 </Link>
                         </Container>               
