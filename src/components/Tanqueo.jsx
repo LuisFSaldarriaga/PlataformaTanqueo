@@ -8,7 +8,7 @@ import { Container, Row, Col, Form, FormControl, InputGroup, Button, Dropdown, D
 export function Tanqueo() {
     return (
         <>
-            <Container >
+            <Container>
                 <Row className="justify-content-md-center">
                     <Col md="auto" id="Titulo">
                         Tanqueo
@@ -99,7 +99,7 @@ export function Tanqueo() {
                                 </Row>
                             </Container>
                         </Row>
-                        <Row>
+                        <Row style={{marginBottom:"20px"}} >
                             <Container id="Cont-Tanqueo">
                                 <Row>
                                     <Container style={{display:"flex"}}>
@@ -174,7 +174,7 @@ export function Tanqueo() {
                             </Container>
                         </Row>
                     </Col>
-                    <Col md="auto" style={{marginBottom:"370px"}} >
+                    <Col md="auto" >
                         <PreciosView></PreciosView>
                     </Col>
                 </Row>
