@@ -7,7 +7,7 @@ import { Container, Row, Col, FormControl, InputGroup, Button } from 'react-boot
 export function GestionUsuarios() {
     return (
         <>
-            <Container style={{marginTop:"60px"}}>
+            <Container>
                 <Row className="justify-content-md-center">
                     <Col md="auto" id="Titulo">
                         Gestion de Usuarios

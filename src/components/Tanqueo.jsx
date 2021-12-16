@@ -8,7 +8,7 @@ import { Container, Row, Col, Form, FormControl, InputGroup, Button, Dropdown, D
 export function Tanqueo() {
     return (
         <>
-            <Container style={{marginTop:"60px"}}>
+            <Container>
                 <Row className="justify-content-md-center">
                     <Col md="auto" id="Titulo">
                         Tanqueo

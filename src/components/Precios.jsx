@@ -8,7 +8,7 @@ export function Precios() {
     
     return (
         <>
-            <Container style={{marginTop:"60px"}}>
+            <Container>
                 <Row className="justify-content-md-center">
                     <Col md="auto" id="Titulo">
                         Precios

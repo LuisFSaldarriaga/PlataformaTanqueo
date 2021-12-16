@@ -12,7 +12,7 @@ export function HeaderUserI() {
     return (
         <>
             {auth.isLogged() && (
-                <>
+                <div style={{ marginBottom: "60px" }}>
                     <Navbar id="Header-UserI" fixed="top" expand="md" collapseOnSelect>
                         <Navbar.Brand href="#">
                             <img src={logo} alt="" width="170" style={{ paddingLeft: "25px" }} />
@@ -44,7 +44,7 @@ export function HeaderUserI() {
                             </Nav> 
                         </Navbar.Collapse>
                     </Navbar>                        
-                </>
+                </div>
             )}
             <Outlet />
         </>

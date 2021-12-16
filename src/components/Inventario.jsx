@@ -6,7 +6,7 @@ import "./css/Inventario.css"
 export function Inventario() {
     return (
         <>
-            <Container style={{marginTop:"60px"}}>
+            <Container>
                 <Row className="justify-content-md-center">
                     <Col md="auto" id="Titulo">
                         Inventario
