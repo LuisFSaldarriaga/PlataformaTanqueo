@@ -13,7 +13,7 @@ export function HeaderUserI() {
         <>
             {auth.isLogged() && (
                 <>
-                    <Navbar id="Header-UserI" relative="top" expand="md" collapseOnSelect>
+                    <Navbar id="Header-UserI" fixed="top" expand="md" collapseOnSelect>
                         <Navbar.Brand href="#">
                             <img src={logo} alt="" width="170" style={{ paddingLeft: "25px" }} />
                         </Navbar.Brand>

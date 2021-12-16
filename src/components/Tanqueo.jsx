@@ -8,7 +8,7 @@ import { Container, Row, Col, Form, FormControl, InputGroup, Button, Dropdown, D
 export function Tanqueo() {
     return (
         <>
-            <Container>
+            <Container style={{marginTop:"60px"}}>
                 <Row className="justify-content-md-center">
                     <Col md="auto" id="Titulo">
                         Tanqueo
@@ -21,7 +21,6 @@ export function Tanqueo() {
                             id="Input-SearchF"
                             placeholder="Numero de Documento"
                             aria-label="Numero de Documento"
-                            aria-describedby="basic-addon2"
                             />
                             <Button id="Boton2" as="input" type="button" value="Buscar" />{' '}
                         </InputGroup>

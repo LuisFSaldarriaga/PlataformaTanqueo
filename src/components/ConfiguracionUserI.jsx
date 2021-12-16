@@ -7,7 +7,7 @@ import { Container, Row, Col, Nav, Form, Button } from 'react-bootstrap';
 export function ConfiguracionUserI() {
     return (
         <>
-            <Container>
+            <Container style={{marginTop:"60px"}}>
                 <Row className="justify-content-md-center">
                     <Col md="auto" id="Titulo">
                         Configuracion
