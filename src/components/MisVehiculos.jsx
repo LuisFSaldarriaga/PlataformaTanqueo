@@ -38,7 +38,7 @@ export function MisVehiculos() {
                 </Row>
                 
             </Container>
-            <Container className="d-grid gap-4" id="BotonUE">>
+            <Container className="d-grid gap-4" id="BotonUE">&gt;
             <div id= "BotonUE"className="d-grid gap-4">
                 <Button  size="lg">
                     <img id="center" src={Tanque} alt="" width="170" rounded />   
