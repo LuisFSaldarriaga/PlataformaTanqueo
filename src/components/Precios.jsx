@@ -1,6 +1,4 @@
 import React from "react";
-import { HeaderUserI } from  "./HeaderUserI";
-import { FooterUserI } from "./FooterUserI.jsx";
 import "./css/Precios.css"
 import { Container, Row, Col, FormControl, Button} from 'react-bootstrap';
 
