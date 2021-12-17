@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import useAuth from "../auth/useAuth.js";
 
 // Vistas
 
@@ -27,9 +28,26 @@ import PublicRouter from "./PublicRouter.js";
 import { EditarVehiculo } from "../components/EditarVehiculo.jsx";
 
 export default function AppRouter() {
+
+    const auth = useAuth();
+    const dato = JSON.parse(auth.user); 
+
+    let interno = false;
+
+    if(dato) {
+        const { rol } = dato;
+        if ( rol === "externo" ) {
+            interno = true;
+        }
+    } 
+
     return (
         <Router>
-            <HeaderUserE />
+            {interno ? (
+                <HeaderUserE />
+            ) : (
+                <HeaderUserI />
+            )}
             <Routes>
                 <Route path="/ingresar" element={<PublicRouter><Login /></PublicRouter>}/>
                 <Route path="/registrar" element={<PublicRouter><Singup /></PublicRouter>}/>
@@ -47,10 +65,13 @@ export default function AppRouter() {
                 <Route path="/historial" element={<PrivateRouter><Historial /></PrivateRouter>}/>
                 <Route path="/precio-galon" element={<PrivateRouter><PrecioPorGalon /></PrivateRouter>}/>
                 <Route path="/cuenta-ue" element={<PrivateRouter><CuentaUE /></PrivateRouter>}/>
-                
                 <Route path="*" element={<h1>Pagina No Encontrada</h1>}/>
             </Routes>
-            <FooterUserE />
+            {interno ? (
+                <FooterUserE />
+            ) : (
+                <FooterUserI />
+            )}
         </Router>
     )
 }
