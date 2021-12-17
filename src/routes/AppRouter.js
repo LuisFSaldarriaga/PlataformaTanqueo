@@ -24,6 +24,7 @@ import { FooterUserE } from "../components/FooterUserE.jsx";
 import { MisVehiculos } from "../components/MisVehiculos.jsx";
 import PrivateRouter from "./PrivateRouter.js";
 import PublicRouter from "./PublicRouter.js";
+import { EditarVehiculo } from "../components/EditarVehiculo.jsx";
 
 export default function AppRouter() {
     return (
@@ -33,15 +34,14 @@ export default function AppRouter() {
                 <Route path="/ingresar" element={<PublicRouter><Login /></PublicRouter>}/>
                 <Route path="/registrar" element={<PublicRouter><Singup /></PublicRouter>}/>
                 <Route path="/informacion" element={<Footer />} />
-
+                <Route path="/nuevo_vehiculo" element={<DatosNuevoVehiculo />}></Route>
                 <Route path="/precios" element={<PrivateRouter><Precios /></PrivateRouter>} />
                 <Route path="/inventario" element={<PrivateRouter><Inventario /></PrivateRouter>} />
                 <Route path="/tanqueo" element={<PrivateRouter><Tanqueo /></PrivateRouter>} />
                 <Route path="/gestion-user" element={<PrivateRouter><GestionUsuarios /></PrivateRouter>} />
-
                 <Route path="/configuracion" element={<PrivateRouter><ConfiguracionUserI /></PrivateRouter>}/>
                 <Route path="/vehiculos" element={<PublicRouter> <MisVehiculos /> </PublicRouter>}/>
-
+                <Route path="/vehiculos/:id" element={<PublicRouter> <EditarVehiculo /> </PublicRouter>}/>
                 <Route path="*" element={<h1>Pagina No Encontrada</h1>}/>
             </Routes>
             <FooterUserI />
