@@ -28,7 +28,10 @@ export function MisVehiculos() {
                                 
                             </Card>
                             <Button id= "BotonUE1" variant="secondary" size="lg">
-                                        Editar/Eliminar Vehiculo
+                                        Editar
+                            </Button>
+                            <Button id= "BotonUE1" variant="secondary" size="lg">
+                                        Eliminar Vehiculo
                             </Button>
                             </Col>
                             
