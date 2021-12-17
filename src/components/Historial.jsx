@@ -3,6 +3,14 @@ import "./css/Historial.css";
 import { Container, Row, Col, Form, FormControl, InputGroup, Button, Dropdown, DropdownButton} from 'react-bootstrap';
 
 export function Historial() {
+
+    
+
+
+
+
+
+
     return (
         <Container >
             <Row className="justify-content-md-center">

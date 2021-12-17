@@ -42,11 +42,8 @@ export function MisVehiculos() {
                                     </div>
                                 </Card.Body>                               
                             </Card>
-                            <Button id= "BotonUE1" variant="secondary" size="lg">
+                            <Button href={`vehiculos/${p._id}`} id= "BotonUE1" variant="secondary" size="lg">
                                         Editar
-                            </Button>
-                            <Button id= "BotonUE1" variant="secondary" size="lg">
-                                        Eliminar Vehiculo
                             </Button>
                             <Button href={`vehiculos/${p._id}`} id="BotonUE1" variant="secondary" size="lg">
                                         Eliminar Vehiculo

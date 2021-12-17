@@ -1,29 +1,30 @@
 import React from "react";
 import { useState } from "react";
+import { useEffect } from "react";
 import { useRef } from "react";
 import { Button, Nav, Stack, Container} from "react-bootstrap";
 import { useParams } from "react-router-dom";
 
-export async function EditarVehiculo() {
+export function EditarVehiculo() {
 
     //Referencias para capturar datos en inputs
     const colorRef = useRef();
-    const [vehiculo, setVehiculo] = useState();
+    const [data, setData] = useState([]);
     const {id} = useParams();
-    console.log(id);
 
-    await fetch(`http://localhost:8080/vehiculos/buscar/${id}`, {
+    useEffect(()=> {
+        fetch(`http://localhost:8080/vehiculos/buscar/${id}`, {
         method: "GET"
     }).then(res => res.json())
-    .then(res => setVehiculo(res.vehiculo))
-
+    .then(res => setData(res.data))
+    }, []);
+    
     async function editar() {
         const color = colorRef.current.value;
         //const token = localStorage.getItem("token");
 
         await fetch(`http://localhost:8080/vehiculos/edit/${id}`, {
             headers: {
-                "Accept": "application/json",
                 "Content-Type": "application/json"
                 //"authorization": `Bearer ${token}`
             },
@@ -64,13 +65,13 @@ export async function EditarVehiculo() {
                     <div className="mx-4">
                         <form action="#">
                             <div className="mt-3">
-                                <input readOnly className="form-control w-100 rounded" type="text" placeholder={vehiculo.placa} />
+                                <input readOnly className="form-control w-100 rounded bg-color" type="text" placeholder={data.placa} />
                             </div>              
                             <div className="mt-3">
                                 <input ref={colorRef} className="form-control w-100 rounded" type="text" placeholder="Color" />
                             </div>
                             <div className="mt-3">
-                                <input readOnly className="form-control w-100 rounded" type="text" placeholder={vehiculo.fabricante} />
+                                <input readOnly className="form-control w-100 rounded" type="text" placeholder={data.fabricante} />
                             </div>  
                         </form>
                     </div>

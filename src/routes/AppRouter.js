@@ -38,10 +38,12 @@ export default function AppRouter() {
                 <Route path="/precios" element={<PrivateRouter><Precios /></PrivateRouter>} />
                 <Route path="/inventario" element={<PrivateRouter><Inventario /></PrivateRouter>} />
                 <Route path="/tanqueo" element={<PrivateRouter><Tanqueo /></PrivateRouter>} />
+                <Route path="/tanqueo" element={<PublicRouter><Tanqueo /></PublicRouter>} /> 
                 <Route path="/gestion-user" element={<PrivateRouter><GestionUsuarios /></PrivateRouter>} />
                 <Route path="/configuracion" element={<PrivateRouter><ConfiguracionUserI /></PrivateRouter>}/>
                 <Route path="/vehiculos" element={<PublicRouter> <MisVehiculos /> </PublicRouter>}/>
                 <Route path="/vehiculos/:id" element={<PublicRouter> <EditarVehiculo /> </PublicRouter>}/>
+                <Route path="/historial" element={<PublicRouter> <Historial /> </PublicRouter>}/>
                 <Route path="*" element={<h1>Pagina No Encontrada</h1>}/>
             </Routes>
             <FooterUserI />
