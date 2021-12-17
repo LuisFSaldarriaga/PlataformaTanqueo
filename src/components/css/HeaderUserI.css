@@ -4,17 +4,24 @@
 }
 
 #Header-UserI{
-    background-color: var(--GrisMain);
     height:60px;
+    width: 100%;
+    background-color: var(--GrisMain);
+}
+#links-cont{
+    background-color: #5b5b5b;
 }
 #Nav-cont{
+    justify-content: space-between;
     height: 60px;
+    width: 100%;
+    background-color: var(--GrisMain);
 }
 #link{
     color: #fff;
+    text-decoration: none;
     padding: 10px;
     margin-top: 8px;
-    position: relative;
 }
 /*las clases "link:after", y "link:hover::after" corresponden al efecto
 hover que se ve al pasar el cursor sobre los links que estan en el header.*/
@@ -32,6 +39,10 @@ hover que se ve al pasar el cursor sobre los links que estan en el header.*/
 #link:hover::after{
     width: 100%;
     right: 0;
+}
+#cont-Icons{
+    padding-top: 5px;
+    background-color: var(--GrisMain);
 }
 .Icons-Header{
     width: 50px;

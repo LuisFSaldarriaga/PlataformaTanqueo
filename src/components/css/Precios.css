@@ -7,7 +7,7 @@
 }
 #Titulo{
     padding: 15px;
-    font-size: 30px;
+    font-size: 30px !important;
 }
 #Cont-Gasolina{
     width:680px;
@@ -61,7 +61,7 @@
 #Boton{
     width: 120px;
     margin: 10px;
-    background-color: var(--NaranjaMain);
+    background-color: var(--NaranjaMain) !important;
     border-color: var(--NaranjaMain);
 }
 #Boton:focus{
@@ -69,7 +69,7 @@
     border-color: transparent;
 }
 #Boton:hover{
-    background-color: var(--NaranjaSecond);
+    background-color: var(--NaranjaSecond) !important;
     border-color: var(--NaranjaSecond);
 }
 #Contain-FechaInput{

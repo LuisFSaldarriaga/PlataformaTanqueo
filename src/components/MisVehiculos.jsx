@@ -42,8 +42,11 @@ export function MisVehiculos() {
                                     </div>
                                 </Card.Body>                               
                             </Card>
-                            <Button href={`vehiculos/${p._id}`} id="BotonUE1" variant="secondary" size="lg">
+                            <Button id= "BotonUE1" variant="secondary" size="lg">
                                         Editar
+                            </Button>
+                            <Button id= "BotonUE1" variant="secondary" size="lg">
+                                        Eliminar Vehiculo
                             </Button>
                             <Button href={`vehiculos/${p._id}`} id="BotonUE1" variant="secondary" size="lg">
                                         Eliminar Vehiculo
@@ -53,7 +56,7 @@ export function MisVehiculos() {
                     </Row>               
                 </Row>              
             </Container>
-            <Container className="d-grid gap-4" id="BotonUE">
+            <Container className="d-grid gap-4" id="BotonUE">&gt;
             <div id= "BotonUE"className="d-grid gap-4">
                 <Button  size="lg">
                     <img id="center" src={Tanque} alt="" width="170" rounded />   
