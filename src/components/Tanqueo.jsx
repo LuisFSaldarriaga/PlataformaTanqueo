@@ -1,7 +1,6 @@
 import React from "react";
-import { HeaderUserI } from  "./HeaderUserI";
-import { FooterUserI } from "./FooterUserI.jsx";
-import { PreciosView } from "./PreciosView.jsx"
+import { PreciosView } from "./PreciosView.jsx";
+import { SaldoView } from "./SaldoView.jsx";
 import "./css/Tanqueo.css";
 import { Container, Row, Col, Form, FormControl, InputGroup, Button, Dropdown, DropdownButton} from 'react-bootstrap';
 
@@ -98,7 +97,7 @@ export function Tanqueo() {
                                 </Row>
                             </Container>
                         </Row>
-                        <Row style={{marginBottom:"20px"}} >
+                        <Row style={{marginBottom:"80px"}} >
                             <Container id="Cont-Tanqueo">
                                 <Row>
                                     <Container style={{display:"flex"}}>
@@ -175,6 +174,7 @@ export function Tanqueo() {
                     </Col>
                     <Col md="auto" >
                         <PreciosView></PreciosView>
+                        <SaldoView></SaldoView>
                     </Col>
                 </Row>
             </Container>

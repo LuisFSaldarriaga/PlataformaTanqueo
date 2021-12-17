@@ -10,7 +10,7 @@ import WhatsappLogo from "./assets/img/W.png"
 export function FooterUserI() {
   return (
     <>
-     <Navbar collapseOnSelect expand="lg" relative="bottom" className="container-footer">
+     <Navbar collapseOnSelect expand="lg" fixed="bottom" className="container-footer">
         <Container class="footer">
           <div class="text-nowrap copyright">
             © 2021 Todos los Derechos Reservados
