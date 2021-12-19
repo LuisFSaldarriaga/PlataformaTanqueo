@@ -17,6 +17,7 @@ export function ConfiguracionUserI() {
 
     const update = () => {
         const { id } = JSON.parse(auth.user);
+        console.log(id);
         const name = nameRef.current.value;
         const lastName = lastNameRef.current.value;
         const username = usernameRef.current.value;

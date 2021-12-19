@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import useAuth from "../auth/useAuth.js";
 
 // Vistas
@@ -23,9 +23,12 @@ import { Historial } from "../components/Historial.jsx";
 import { CuentaUE } from "../components/CuentaUE.jsx";
 import { FooterUserE } from "../components/FooterUserE.jsx";
 import { MisVehiculos } from "../components/MisVehiculos.jsx";
-import PrivateRouter from "./PrivateRouter.js";
-import PublicRouter from "./PublicRouter.js";
 import { EditarVehiculo } from "../components/EditarVehiculo.jsx";
+
+//Routes
+import ExternoRouter from "./ExternoRouter"
+import InternoRouter from "./InternoRouter.js";
+import PublicRouter from "./PublicRouter.js";
 
 export default function AppRouter() {
 
@@ -53,24 +56,23 @@ export default function AppRouter() {
                 <Route path="/registrar" element={<PublicRouter><Singup /></PublicRouter>}/>
                 <Route path="/informacion" element={<Footer />} />
 
-                <Route path="/precios" element={<PrivateRouter><Precios /></PrivateRouter>} />
-                <Route path="/inventario" element={<PrivateRouter><Inventario /></PrivateRouter>} />
-                <Route path="/tanqueo" element={<PrivateRouter><Tanqueo /></PrivateRouter>} />
-                <Route path="/gestion-user" element={<PrivateRouter><GestionUsuarios /></PrivateRouter>} />
-                <Route path="/configuracion" element={<PrivateRouter><ConfiguracionUserI /></PrivateRouter>}/>
-                <Route path="/vehiculos/:usuario" element={<PrivateRouter><MisVehiculos/></PrivateRouter>}/>
-                <Route path="/agregar" element={<PrivateRouter><DatosNuevoVehiculo /></PrivateRouter>}/>
-                <Route path="vehiculos/edit/:id" element={<PrivateRouter><EditarVehiculo /> </PrivateRouter>}/>
-                <Route path="/historial" element={<PrivateRouter><Historial /></PrivateRouter>}/>
-                <Route path="/precio-galon" element={<PrivateRouter><PrecioPorGalon /></PrivateRouter>}/>
-                <Route path="/cuenta-ue" element={<PrivateRouter><CuentaUE /></PrivateRouter>}/>
+                <Route path="/precios" element={<InternoRouter><Precios /></InternoRouter>} />
+                <Route path="/inventario" element={<InternoRouter><Inventario /></InternoRouter>} />
+                <Route path="/tanqueo" element={<InternoRouter><Tanqueo /></InternoRouter>} />
+                <Route path="/gestion-user" element={<InternoRouter><GestionUsuarios /></InternoRouter>} />
+                <Route path="/configuracion" element={<InternoRouter><ConfiguracionUserI /></InternoRouter>}/>
+
+                <Route path="/vehiculos" element={<ExternoRouter><MisVehiculos/></ExternoRouter>}/>
+                <Route path="/agregar" element={<ExternoRouter><DatosNuevoVehiculo /></ExternoRouter>}/>
+                <Route path="vehiculos/editar/:id" element={<ExternoRouter><EditarVehiculo /> </ExternoRouter>}/>
+                <Route path="/historial" element={<ExternoRouter><Historial /></ExternoRouter>}/>
+                <Route path="/precio-galon" element={<ExternoRouter><PrecioPorGalon /></ExternoRouter>}/>
+                <Route path="/cuenta-ue" element={<ExternoRouter><CuentaUE /></ExternoRouter>}/>
+
+                <Route path="/" element={<Navigate to="/ingresar"/>}/>
                 <Route path="*" element={<h1>Pagina No Encontrada</h1>}/>
             </Routes>
-            {interno ? (
-                <FooterUserE />
-            ) : (
-                <FooterUserI />
-            )}
+            <FooterUserI />
         </Router>
     )
 }
