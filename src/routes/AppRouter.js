@@ -58,9 +58,9 @@ export default function AppRouter() {
                 <Route path="/tanqueo" element={<PrivateRouter><Tanqueo /></PrivateRouter>} />
                 <Route path="/gestion-user" element={<PrivateRouter><GestionUsuarios /></PrivateRouter>} />
                 <Route path="/configuracion" element={<PrivateRouter><ConfiguracionUserI /></PrivateRouter>}/>
-                <Route path="/vehiculos" element={<PrivateRouter><MisVehiculos/></PrivateRouter>}/>
+                <Route path="/vehiculos/:usuario" element={<PrivateRouter><MisVehiculos/></PrivateRouter>}/>
                 <Route path="/agregar" element={<PrivateRouter><DatosNuevoVehiculo /></PrivateRouter>}/>
-                <Route path="/editar/:id" element={<PrivateRouter><EditarVehiculo /> </PrivateRouter>}/>
+                <Route path="vehiculos/edit/:id" element={<PrivateRouter><EditarVehiculo /> </PrivateRouter>}/>
                 <Route path="/historial" element={<PrivateRouter><Historial /></PrivateRouter>}/>
                 <Route path="/precio-galon" element={<PrivateRouter><PrecioPorGalon /></PrivateRouter>}/>
                 <Route path="/cuenta-ue" element={<PrivateRouter><CuentaUE /></PrivateRouter>}/>

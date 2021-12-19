@@ -8,7 +8,8 @@ import useAuth from "../auth/useAuth";
 export function HeaderUserE() {
   
     const auth = useAuth();
-
+    const id = JSON.parse(auth.user)
+    console.log(id.username);
   return (
     <>
       {auth.isLogged() && (
@@ -24,7 +25,7 @@ export function HeaderUserE() {
             </Navbar.Brand>
             <Navbar.Collapse>
               <Nav id="Nav-cont">
-                <Link to="/vehiculos" href="#" id="link">
+                <Link to={`/vehiculos/${id.username}`} href={`/vehiculos/${id.username}`} id="link">
                   Vehiculos
                 </Link>
                 <Link to="/historial" id="link">

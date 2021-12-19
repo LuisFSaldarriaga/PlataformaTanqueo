@@ -5,15 +5,17 @@ import Carro from './assets/img/Carro.png';
 import Tanque from './assets/img/Tanque.png';
 import { Container, Row, Col, Form, FormControl, InputGroup, Button, Dropdown, DropdownButton} from 'react-bootstrap';
 import { Link } from "react-router-dom";
+import useAuth from "../auth/useAuth";
 
 export function MisVehiculos() {
-    
+    const auth = useAuth();
+    const {usuario} = JSON.parse(auth.user);
     //Hook para manejar array del back
     const [listado, setListado] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:8080/vehiculos/mis_vehiculos", {
-            method: "GET"
+        fetch(`http://localhost:8080/vehiculos/mis_vehiculos/${usuario}`, {
+            method: "GET",
         }).then(res => res.json())
         .then(res => {
             if(res.status ==='ok'){
@@ -43,10 +45,10 @@ export function MisVehiculos() {
                                     </div>
                                 </Card.Body>                               
                             </Card>
-                            <Button href={`vehiculos/${p._id}`} id= "BotonUE1" variant="secondary" size="lg">
+                            <Button href={`vehiculos/edit/${p._id}`} id= "BotonUE1" variant="secondary" size="lg">
                                         Editar
                             </Button>
-                            <Button href={`vehiculos/${p._id}`} id="BotonUE1" variant="secondary" size="lg">
+                            <Button href={`vehiculos/edit/${p._id}`} id="BotonUE1" variant="secondary" size="lg">
                                         Eliminar Vehiculo
                             </Button>
                             </Col>)

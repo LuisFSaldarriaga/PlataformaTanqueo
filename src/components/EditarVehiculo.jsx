@@ -52,7 +52,7 @@ export function EditarVehiculo() {
                 <nav>
                     <Nav className="p-2 bg-secondary" activeKey="/home" onSelect={(selectedKey) => alert(`selected ${selectedKey}`)} >
                         <Nav.Item>
-                        <Nav.Link className="btn btn-warning rounded text-white px-5 ms-5" href="/home">Regresar</Nav.Link>
+                        <Nav.Link className="btn btn-warning rounded text-white px-5 ms-5" href="/vehiculos">Regresar</Nav.Link>
                         </Nav.Item>
                     </Nav>
                 </nav>
