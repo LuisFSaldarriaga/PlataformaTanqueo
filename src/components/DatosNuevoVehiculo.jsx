@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Button, Nav, Stack, Container} from "react-bootstrap";
 
 export function DatosNuevoVehiculo() {
@@ -34,9 +35,9 @@ export function DatosNuevoVehiculo() {
         <>
             <header className="mb-3">
                 <nav>
-                    <Nav className="p-2 bg-secondary" activeKey="/home" onSelect={(selectedKey) => alert(`selected ${selectedKey}`)} >
+                    <Nav className="p-2 bg-secondary" >
                         <Nav.Item>
-                        <Nav.Link className="btn btn-warning rounded text-white px-5 ms-5" href="/home">Regresar</Nav.Link>
+                        <Nav.Link className="btn btn-warning rounded text-white px-5 ms-5"><Link to="/vehiculos">Regresar</Link></Nav.Link>
                         </Nav.Item>
                     </Nav>
                 </nav>
