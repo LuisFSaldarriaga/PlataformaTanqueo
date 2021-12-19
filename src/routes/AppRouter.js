@@ -23,9 +23,11 @@ import { Historial } from "../components/Historial.jsx";
 import { CuentaUE } from "../components/CuentaUE.jsx";
 import { FooterUserE } from "../components/FooterUserE.jsx";
 import { MisVehiculos } from "../components/MisVehiculos.jsx";
+import { EditarVehiculo } from "../components/EditarVehiculo.jsx";
+
+//Routes
 import PrivateRouter from "./PrivateRouter.js";
 import PublicRouter from "./PublicRouter.js";
-import { EditarVehiculo } from "../components/EditarVehiculo.jsx";
 
 export default function AppRouter() {
 
@@ -58,6 +60,7 @@ export default function AppRouter() {
                 <Route path="/tanqueo" element={<PrivateRouter><Tanqueo /></PrivateRouter>} />
                 <Route path="/gestion-user" element={<PrivateRouter><GestionUsuarios /></PrivateRouter>} />
                 <Route path="/configuracion" element={<PrivateRouter><ConfiguracionUserI /></PrivateRouter>}/>
+
                 <Route path="/vehiculos" element={<PrivateRouter><MisVehiculos/></PrivateRouter>}/>
                 <Route path="/agregar" element={<PrivateRouter><DatosNuevoVehiculo /></PrivateRouter>}/>
                 <Route path="/editar/:id" element={<PrivateRouter><EditarVehiculo /> </PrivateRouter>}/>

@@ -1,4 +1,5 @@
 import { createContext, useState, useEffect } from "react";
+import { Navigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -35,6 +36,16 @@ const AuthProvider = ({ children }) => {
                 }
             })
             .catch(error => alert("error"+ error))
+        },
+        internoExterno() {
+            const { rol } = JSON.parse(user);
+            
+            if (rol === "externo"){
+                return <Navigate to="/vehiculos"/>;
+            } else {
+                return <Navigate to="/precios"/>
+            } 
+            
         },
         logout() {
             setUser(null);
