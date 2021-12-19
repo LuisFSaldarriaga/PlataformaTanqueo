@@ -7,6 +7,6 @@ export default function PrivateRouter({ children }) {
     const location = useLocation();
     
     return (
-        auth.esInterno() ? children : <Navigate to={{pathname: "/ingresar"}} state={{from: location}} />
+        auth.esExterno() ? children : <Navigate to={{pathname: "/ingresar"}} state={{from: location}} />
     )
 }

@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import useAuth from "../auth/useAuth.js";
 
 // Vistas
@@ -26,6 +26,7 @@ import { MisVehiculos } from "../components/MisVehiculos.jsx";
 import { EditarVehiculo } from "../components/EditarVehiculo.jsx";
 
 //Routes
+import ExternoRouter from "./ExternoRouter"
 import PrivateRouter from "./PrivateRouter.js";
 import PublicRouter from "./PublicRouter.js";
 
@@ -61,12 +62,14 @@ export default function AppRouter() {
                 <Route path="/gestion-user" element={<PrivateRouter><GestionUsuarios /></PrivateRouter>} />
                 <Route path="/configuracion" element={<PrivateRouter><ConfiguracionUserI /></PrivateRouter>}/>
 
-                <Route path="/vehiculos" element={<PrivateRouter><MisVehiculos/></PrivateRouter>}/>
-                <Route path="/agregar" element={<PrivateRouter><DatosNuevoVehiculo /></PrivateRouter>}/>
-                <Route path="/editar/:id" element={<PrivateRouter><EditarVehiculo /> </PrivateRouter>}/>
-                <Route path="/historial" element={<PrivateRouter><Historial /></PrivateRouter>}/>
-                <Route path="/precio-galon" element={<PrivateRouter><PrecioPorGalon /></PrivateRouter>}/>
-                <Route path="/cuenta-ue" element={<PrivateRouter><CuentaUE /></PrivateRouter>}/>
+                <Route path="/vehiculos" element={<ExternoRouter><MisVehiculos/></ExternoRouter>}/>
+                <Route path="/agregar" element={<ExternoRouter><DatosNuevoVehiculo /></ExternoRouter>}/>
+                <Route path="/editar/:id" element={<ExternoRouter><EditarVehiculo /> </ExternoRouter>}/>
+                <Route path="/historial" element={<ExternoRouter><Historial /></ExternoRouter>}/>
+                <Route path="/precio-galon" element={<ExternoRouter><PrecioPorGalon /></ExternoRouter>}/>
+                <Route path="/cuenta-ue" element={<ExternoRouter><CuentaUE /></ExternoRouter>}/>
+
+                <Route path="/" element={<Navigate to="/ingresar"/>}/>
                 <Route path="*" element={<h1>Pagina No Encontrada</h1>}/>
             </Routes>
             {interno ? (

@@ -29,7 +29,7 @@ const AuthProvider = ({ children }) => {
             .then(data =>  data.json())
             .then((data) => {
                 if (data.msg) {
-                    setUser(JSON.stringify({ username: data.username, id: data.id, rol: "externo" } || null))
+                    setUser(JSON.stringify({ username: data.username, id: data.id, rol: "interno" } || null))
                     toast.success(data.msg, {autoClose: 3000, icon: "😉"})
                 } else {
                     toast.error(data.err, {autoClose: 3000})
@@ -38,14 +38,37 @@ const AuthProvider = ({ children }) => {
             .catch(error => alert("error"+ error))
         },
         internoExterno() {
-            const { rol } = JSON.parse(user);
-            
-            if (rol === "externo"){
-                return <Navigate to="/vehiculos"/>;
-            } else {
-                return <Navigate to="/precios"/>
+            if (user) {
+                const { rol } = JSON.parse(user);
+                if (rol === "externo"){
+                    return <Navigate to="/vehiculos"/>;
+                } else {
+                    return <Navigate to="/precios"/>
+                }
             } 
             
+        },
+        esExterno() {
+            if (user) {
+                const { rol } = JSON.parse(user);
+    
+                if (rol === "externo"){
+                    return true;
+                } else {
+                    return false;
+                } 
+            }
+        },
+        esInterno() {
+            if (user) {
+                const { rol } = JSON.parse(user);
+    
+                if (rol === "interno"){
+                    return true;
+                } else {
+                    return false;
+                } 
+            } 
         },
         logout() {
             setUser(null);
