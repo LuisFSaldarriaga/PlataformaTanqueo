@@ -29,7 +29,7 @@ const AuthProvider = ({ children }) => {
             .then(data =>  data.json())
             .then((data) => {
                 if (data.msg) {
-                    setUser(JSON.stringify({ username: data.username, id: data.id, rol: "interno" } || null))
+                    setUser(JSON.stringify({ username: data.username, id: data.id, rol: data.rol } || null))
                     toast.success(data.msg, {autoClose: 3000, icon: "😉"})
                 } else {
                     toast.error(data.err, {autoClose: 3000})
