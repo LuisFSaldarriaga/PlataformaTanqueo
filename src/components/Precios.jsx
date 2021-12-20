@@ -1,8 +1,50 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./css/Precios.css"
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { Container, Row, Col, FormControl, Button} from 'react-bootstrap';
 
 export function Precios() {
+
+    toast.configure();
+
+    const priceExtraRef = useRef();
+    const fechaInicioExtraRef = useRef();
+    const fechaFinalExtraRef = useRef();
+
+    const priceCorrienteRef = useRef();
+    const fechaInicioCorrienteRef = useRef();
+    const fechaFinalCorrienteRef = useRef();
+
+    const updatePrecios = (tipo) => {
+
+        const price = priceExtraRef.current.value || priceCorrienteRef.current.value;
+        const fechaInicio = fechaInicioExtraRef.current.value || fechaInicioCorrienteRef.current.value;
+        const fechaFinal = fechaFinalExtraRef.current.value || fechaFinalCorrienteRef.current.value;
+
+
+        fetch("http://localhost:8080/precios", {
+            headers: { "Content-Type": "application/json"},
+            method: "PUT", 
+            body: JSON.stringify({ tipo, price, fechaInicio, fechaFinal })
+        })
+        .then(data => data.json())
+        .then((data) => {
+            if (data.msg) {
+                toast.success(data.msg, { autoClose: 3000 })
+                priceExtraRef.current.value = null;
+                fechaInicioExtraRef.current.value = null;
+                fechaFinalExtraRef.current.value = null;
+
+                priceCorrienteRef.current.value = null;
+                fechaInicioCorrienteRef.current.value = null;
+                fechaFinalCorrienteRef.current.value = null;
+
+            } else {
+                toast.error(data.err, { autoClose: 3000 })
+            }
+        })
+    }
     
     return (
         <>
@@ -26,7 +68,7 @@ export function Precios() {
                                         </div>                                
                                         <div id="SubContain2">
                                             <div id="Text1-Style">Precio:</div>
-                                            <FormControl id="PrecioInput"/>
+                                            <FormControl ref={priceCorrienteRef} id="PrecioInput"/>
                                         </div>
                                     </Row>
                                 </Col>
@@ -34,8 +76,8 @@ export function Precios() {
                                     <Container id="Contain-Fecha">
                                         <Row className="justify-content-md-center">
                                             <div id="Contain-FechaInput">
-                                                <input id="FechaInput" className="form-control" type="date" placeholder="Fecha de Nacimiento"  />
-                                                <input id="FechaInput"className="form-control" type="date" placeholder="Fecha de Nacimiento"  />
+                                                <input ref={fechaInicioCorrienteRef} id="FechaInput" className="form-control" type="date" placeholder="Fecha de Nacimiento"  />
+                                                <input ref={fechaFinalCorrienteRef} id="FechaInput"className="form-control" type="date" placeholder="Fecha de Nacimiento"  />
                                             </div>
                                         </Row>
                                         <Row className="justify-content-md-center">
@@ -46,7 +88,7 @@ export function Precios() {
                                         </Row>
                                     </Container>
                                     <Col md={{ span: 3, offset: 8}}>
-                                        <Button id="Boton" as="input" type="submit" value="Guardar" />{' '}
+                                        <Button id="Boton" as="input" type="submit" value="Guardar" onClick={() => updatePrecios('corriente')}/>{' '}
                                     </Col>                                     
                                 </Col>
                             </Row>
@@ -64,7 +106,7 @@ export function Precios() {
                                         </div>                                
                                         <div id="SubContain2">
                                             <div id="Text1-Style">Precio:</div>
-                                            <FormControl id="PrecioInput"/>
+                                            <FormControl ref={priceExtraRef} id="PrecioInput"/>
                                         </div>
                                     </Row>
                                 </Col>
@@ -72,8 +114,8 @@ export function Precios() {
                                     <Container id="Contain-Fecha">
                                         <Row className="justify-content-md-center">
                                             <div id="Contain-FechaInput">
-                                                <input id="FechaInput" className="form-control" type="date" placeholder="Fecha de Nacimiento"  />
-                                                <input id="FechaInput"className="form-control" type="date" placeholder="Fecha de Nacimiento"  />
+                                                <input ref={fechaInicioExtraRef} id="FechaInput" className="form-control" type="date" placeholder="Fecha de Nacimiento"  />
+                                                <input ref={fechaFinalExtraRef} id="FechaInput"className="form-control" type="date" placeholder="Fecha de Nacimiento"  />
                                             </div>
                                         </Row>
                                         <Row className="justify-content-md-center">
@@ -84,7 +126,7 @@ export function Precios() {
                                         </Row>
                                     </Container>
                                     <Col md={{ span: 3, offset: 8}}>
-                                        <Button id="Boton" as="input" type="submit" value="Guardar" />{' '}
+                                        <Button id="Boton" as="input" type="submit" value="Guardar" onClick={() => updatePrecios('extra')}/>{' '}
                                     </Col>
                                 </Col>
                             </Row>

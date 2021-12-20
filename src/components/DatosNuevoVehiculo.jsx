@@ -41,7 +41,7 @@ export function DatosNuevoVehiculo() {
                 <nav>
                     <Nav className="p-2 bg-secondary" >
                         <Nav.Item>
-                        <Nav.Link className="btn btn-warning rounded text-white px-5 ms-5"><Link to="/vehiculos">Regresar</Link></Nav.Link>
+                        <Link to={`/vehiculos/${dueño.id}`} className="btn btn-warning rounded text-white px-5 ms-5">Regresar</Link>
                         </Nav.Item>
                     </Nav>
                 </nav>

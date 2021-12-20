@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./css/Inventario.css"
 import { Container, Row, Col, FormControl} from 'react-bootstrap';
 
 export function PreciosView() {
+
+    const [cantidad, setCantidad] = useState({ corriente: "", extra: ""});
+
+    useEffect(() => {
+        fetch("http://localhost:8080/inventario", {
+            headers: { "Content-Type": "application/json"},
+            method: "GET" 
+        })
+        .then(data => data.json())
+        .then(data => setCantidad({ corriente: data.corriente, extra: data.extra }));
+    }, [cantidad])
+
     return(
         <Container id="Cont-PreciosView">
                         <Row className="justify-content-md-center" id="Contain-TipoyPrecio">
@@ -19,7 +31,7 @@ export function PreciosView() {
                                 </svg>
                                 <div id="Text2-Style">Corriente</div>
                             </div>
-                            <FormControl id="PreciosView-Input" value="000000" readOnly/>
+                            <FormControl id="PreciosView-Input" value={`${cantidad.corriente}`} readOnly/>
                         </Row>                            
                         <Row id="Contain-TipoyPrecio">
                             <div id="SubContain-PreciosView">
@@ -28,7 +40,7 @@ export function PreciosView() {
                                 </svg>
                                 <div id="Text2-Style">Extra</div>
                             </div>
-                            <FormControl id="PreciosView-Input" value="000000" readOnly/>
+                            <FormControl id="PreciosView-Input" value={`${cantidad.extra}`} readOnly/>
                         </Row>                                                                
                     </Container>
     );
