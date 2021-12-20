@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Card from 'react-bootstrap/Card';
 import "./css/MisVehiculos.css";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Carro from './assets/img/Carro.png';
 import Tanque from './assets/img/Tanque.png';
 import { Container, Row, Col, Form, FormControl, InputGroup, Button, Dropdown, DropdownButton} from 'react-bootstrap';
@@ -8,6 +10,7 @@ import { Link } from "react-router-dom";
 import useAuth from "../auth/useAuth";
 
 export function MisVehiculos() {
+    toast.configure();
     const auth = useAuth();
     const usuario = JSON.parse(auth.user)
 
@@ -21,7 +24,7 @@ export function MisVehiculos() {
         .then(res => {
             if(res.status ==='ok'){
                 setListado(res.vehiculos);
-            } else alert(res.msg);
+            } else toast.info(res.msg);
         });
     }, []);
 
