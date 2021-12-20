@@ -33,7 +33,7 @@ export function EditarVehiculo() {
         }).then(res => res.json())
             .then(res => {
                 alert(res.msg);
-                if (res.status === "ok") window.location.href="/vehiculos";
+                if (res.status === "ok") window.location.href=`/vehiculos/${id}`;
             })
     };
 
@@ -42,7 +42,7 @@ export function EditarVehiculo() {
             method: "DELETE",
         }).then(res => {
             alert(res.msg);
-            if(res.status === "ok"); window.location.href="/vehiculos";
+            if(res.status === "ok"); window.location.href=`/vehiculos/${id}`;
         })
     }
 
@@ -52,7 +52,7 @@ export function EditarVehiculo() {
                 <nav>
                     <Nav className="p-2 bg-secondary" activeKey="/home" onSelect={(selectedKey) => alert(`selected ${selectedKey}`)} >
                         <Nav.Item>
-                        <Nav.Link className="btn btn-warning rounded text-white px-5 ms-5" href="/vehiculos">Regresar</Nav.Link>
+                        <Nav.Link className="btn btn-warning rounded text-white px-5 ms-5" href={`/vehiculos/${id}`}>Regresar</Nav.Link>
                         </Nav.Item>
                     </Nav>
                 </nav>

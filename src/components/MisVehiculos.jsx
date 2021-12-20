@@ -9,18 +9,19 @@ import useAuth from "../auth/useAuth";
 
 export function MisVehiculos() {
     const auth = useAuth();
-    const {usuario} = JSON.parse(auth.user);
+    const usuario = JSON.parse(auth.user)
+
     //Hook para manejar array del back
     const [listado, setListado] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:8080/vehiculos/mis_vehiculos/${usuario}`, {
+        fetch(`http://localhost:8080/vehiculos/mis_vehiculos/${usuario.id}`, {
             method: "GET",
         }).then(res => res.json())
         .then(res => {
             if(res.status ==='ok'){
                 setListado(res.vehiculos);
-            }
+            } else alert(res.msg);
         });
     }, []);
 
@@ -45,10 +46,10 @@ export function MisVehiculos() {
                                     </div>
                                 </Card.Body>                               
                             </Card>
-                            <Button href={`vehiculos/edit/${p._id}`} id= "BotonUE1" variant="secondary" size="lg">
+                            <Button href={`/vehiculos/editar/${p._id}`} id= "BotonUE1" variant="secondary" size="lg">
                                         Editar
                             </Button>
-                            <Button href={`vehiculos/edit/${p._id}`} id="BotonUE1" variant="secondary" size="lg">
+                            <Button href={`/vehiculos/editar/${p._id}`} id="BotonUE1" variant="secondary" size="lg">
                                         Eliminar Vehiculo
                             </Button>
                             </Col>)

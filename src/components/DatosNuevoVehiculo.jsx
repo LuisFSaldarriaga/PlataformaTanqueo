@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button, Nav, Stack, Container} from "react-bootstrap";
+import useAuth from "../auth/useAuth";
 
 export function DatosNuevoVehiculo() {
 
@@ -9,11 +10,14 @@ export function DatosNuevoVehiculo() {
     const placaRef = useRef();
     const colorRef = useRef();
     const fabricanteRef = useRef();
+    const auth = useAuth();
+    const dueño = JSON.parse(auth.user)
 
     async function guardar() {
         const placa = placaRef.current.value.toUpperCase();
         const color = colorRef.current.value;
         const fabricante = fabricanteRef.current.value;
+        const usuario = dueño.id;
         //const token = localStorage.getItem("token");
 
         await fetch("http://localhost:8080/vehiculos/nuevo", {
@@ -23,11 +27,11 @@ export function DatosNuevoVehiculo() {
                 //"authorization": `Bearer ${token}`
             },
             method: "POST",
-            body: JSON.stringify({ placa, color, fabricante })
+            body: JSON.stringify({ placa, color, fabricante, usuario })
         }).then(res => res.json())
             .then(res => {
                 alert(res.msg);
-                if (res.status === "ok") window.location.href="/vehiculos";
+                if (res.status === "ok") window.location.href=`/vehiculos/${dueño.id}`;
             })
     };
 

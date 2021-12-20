@@ -17,7 +17,7 @@ const AuthProvider = ({ children }) => {
             localStorage.removeItem("user");
         }
     }, [user])
-
+    
     const contextValue = {
         user,
         login(username, password) {
@@ -41,7 +41,7 @@ const AuthProvider = ({ children }) => {
             if (user) {
                 const { rol } = JSON.parse(user);
                 if (rol === "externo"){
-                    return <Navigate to="/vehiculos"/>;
+                    return <Navigate to="/cuenta-ue"/>;
                 } else {
                     return <Navigate to="/precios"/>
                 }

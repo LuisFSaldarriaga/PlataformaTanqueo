@@ -6,10 +6,10 @@ import "./css/HeaderUserE.css";
 import useAuth from "../auth/useAuth";
 
 export function HeaderUserE() {
-  
+
     const auth = useAuth();
-    const id = JSON.parse(auth.user)
-    console.log(id.username);
+    const usuario = JSON.parse(auth.user)
+    console.log(usuario.id);
   return (
     <>
       {auth.isLogged() && (
@@ -25,10 +25,10 @@ export function HeaderUserE() {
             </Navbar.Brand>
             <Navbar.Collapse>
               <Nav id="Nav-cont">
-                <Link to={`/vehiculos/${id.username}`} href={`/vehiculos/${id.username}`} id="link">
+                <Link to={`vehiculos/${usuario.id}`} href="" id="link">
                   Vehiculos
                 </Link>
-                <Link to="/historial" id="link">
+                <Link to={`historial/${usuario.id}`} id="link">
                   Historial
                 </Link>
                 <Link to="/puntos" id="link">

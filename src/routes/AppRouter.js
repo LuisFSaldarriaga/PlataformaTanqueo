@@ -62,10 +62,10 @@ export default function AppRouter() {
                 <Route path="/gestion-user" element={<InternoRouter><GestionUsuarios /></InternoRouter>} />
                 <Route path="/configuracion" element={<InternoRouter><ConfiguracionUserI /></InternoRouter>}/>
 
-                <Route path="/vehiculos" element={<ExternoRouter><MisVehiculos/></ExternoRouter>}/>
+                <Route path="/vehiculos/:id" element={<ExternoRouter><MisVehiculos/></ExternoRouter>}/>
                 <Route path="/agregar" element={<ExternoRouter><DatosNuevoVehiculo /></ExternoRouter>}/>
-                <Route path="vehiculos/editar/:id" element={<ExternoRouter><EditarVehiculo /> </ExternoRouter>}/>
-                <Route path="/historial" element={<ExternoRouter><Historial /></ExternoRouter>}/>
+                <Route path="/vehiculos/editar/:id" element={<ExternoRouter><EditarVehiculo /> </ExternoRouter>}/>
+                <Route path="/historial/:id" element={<ExternoRouter><Historial /></ExternoRouter>}/>
                 <Route path="/precio-galon" element={<ExternoRouter><PrecioPorGalon /></ExternoRouter>}/>
                 <Route path="/cuenta-ue" element={<ExternoRouter><CuentaUE /></ExternoRouter>}/>
 
