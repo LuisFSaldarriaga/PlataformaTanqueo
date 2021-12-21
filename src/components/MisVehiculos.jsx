@@ -11,7 +11,7 @@ export function MisVehiculos() {
     const auth = useAuth();
     const usuario = JSON.parse(auth.user)
 
-    //Hook para manejar array del back
+    //Hook para manejar vehículos del usuario
     const [listado, setListado] = useState([]);
 
     useEffect(() => {
@@ -21,6 +21,7 @@ export function MisVehiculos() {
         .then(res => {
             if(res.status ==='ok'){
                 setListado(res.vehiculos);
+                console.log(listado);
             } else alert(res.msg);
         });
     }, []);
