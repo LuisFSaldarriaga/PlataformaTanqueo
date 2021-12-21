@@ -13,7 +13,7 @@ export function PreciosView() {
         })
         .then(data => data.json())
         .then(data => setCantidad({ corriente: data.corriente, extra: data.extra }));
-    }, [cantidad])
+    }, [])
 
     return(
         <Container id="Cont-PreciosView">
